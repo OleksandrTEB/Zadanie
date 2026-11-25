@@ -1,0 +1,16 @@
+<%- include("naglowek") %>
+
+<h2>Podglad sesji</h2>
+
+<p class="drobne">Numer twojej sesji, czyli to, co siedzi w ciasteczku:</p>
+<pre class="odpowiedz"><%= numerSesji %></pre>
+
+<p class="drobne">Zawartosc sesji przechowywana NA SERWERZE:</p>
+<pre class="odpowiedz"><%= zawartosc %></pre>
+
+<p>
+  <a href="/"><button>Wroc do oferty</button></a>
+  <a href="/sesja/koniec"><button class="maly">Skasuj sesje</button></a>
+</p>
+
+<%- include("stopka") %>

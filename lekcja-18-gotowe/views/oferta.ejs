@@ -1,0 +1,49 @@
+<%- include("naglowek") %>
+
+<% if (imie) { %>
+  <h2>Czesc, <%= imie %>!</h2>
+<% } %>
+
+<p class="status">
+  To twoja <strong><%= odwiedziny %></strong> wizyta na tej stronie.
+  Filtrowan: <strong><%= filtrowania %></strong>.
+  <% if (ostatnieKategorie.length > 0) { %>
+    Ostatnie kategorie: <strong><%= ostatnieKategorie.join(", ") %></strong>.
+  <% } %>
+  <a href="/sesja">podejrzyj sesje</a>
+  <a href="/sesja/reset-licznika">reset licznika</a>
+</p>
+
+<h2>Oferta</h2>
+
+<form class="formularz" action="/" method="GET">
+  <input type="search" name="szukaj" placeholder="Szukaj produktu" value="<%= szukana %>">
+  <div><button type="submit">Szukaj</button></div>
+</form>
+
+<div class="filtry">
+  <a href="/"><button class="<%= wybrana === '' && szukana === '' ? 'aktywny' : '' %>">Wszystkie</button></a>
+
+  <% kategorie.forEach((nazwa) => { %>
+    <a href="/?kategoria=<%= encodeURIComponent(nazwa) %>">
+      <button class="<%= wybrana === nazwa ? 'aktywny' : '' %>"><%= nazwa %></button>
+    </a>
+  <% }) %>
+</div>
+
+<% if (produkty.length === 0) { %>
+  <p class="status blad">Nic nie znaleziono.</p>
+<% } else { %>
+  <ul class="lista">
+    <% produkty.forEach((produkt) => { %>
+      <li>
+        <strong><%= produkt.nazwa %></strong>
+        <span class="drobne"><%= produkt.kategoria %></span>
+        <span class="cena"><%= produkt.cena %> zl</span>
+      </li>
+    <% }) %>
+  </ul>
+  <p class="drobne">Produktow na liscie: <%= produkty.length %></p>
+<% } %>
+
+<%- include("stopka") %>

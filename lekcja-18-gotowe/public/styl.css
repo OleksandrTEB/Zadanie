@@ -1,0 +1,100 @@
+/* styl.css
+   Arkusz stylow projektu Okienko.
+   Plik lezy w folderze public, wiec przegladarka pobiera go spod adresu /styl.css
+*/
+
+:root {
+  --tlo: #f6f7f9;
+  --karta: #ffffff;
+  --tekst: #1b1f24;
+  --szary: #6b7280;
+  --akcent: #2563eb;
+  --ramka: #e3e6ea;
+  --ok: #15803d;
+  --blad: #b91c1c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: system-ui, "Segoe UI", sans-serif;
+  background: var(--tlo);
+  color: var(--tekst);
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+  line-height: 1.55;
+}
+
+header h1 { margin-bottom: .1rem; font-size: 1.7rem; }
+
+.podtytul { color: var(--szary); margin-top: 0; }
+
+h2 { font-size: 1.2rem; margin-top: 2rem; }
+
+a { color: var(--akcent); }
+
+.drobne { color: var(--szary); font-size: .88rem; }
+
+ul.lista { list-style: none; padding: 0; }
+
+ul.lista li {
+  background: var(--karta);
+  border: 1px solid var(--ramka);
+  border-radius: 8px;
+  padding: .7rem .9rem;
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+ul.lista li strong { flex: 1; }
+
+.cena { font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.filtry { display: flex; gap: .4rem; flex-wrap: wrap; margin: .8rem 0; }
+
+.filtry a { text-decoration: none; }
+
+button {
+  font: inherit;
+  padding: .4rem .9rem;
+  border: 1px solid var(--akcent);
+  background: #fff;
+  color: var(--akcent);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button.aktywny { background: var(--akcent); color: #fff; }
+
+.status { font-size: .92rem; padding: .5rem .8rem; border-radius: 6px; display: inline-block; }
+.status.ok { background: #e8f6ec; color: var(--ok); }
+.status.blad { background: #fdecec; color: var(--blad); }
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ramka);
+}
+
+/* --- dodane w lekcji 18 --- */
+
+pre.odpowiedz {
+  background: #1b1f24;
+  color: #e7edf3;
+  padding: .8rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: .85rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+button.maly {
+  padding: .4rem .8rem;
+  font-size: .9rem;
+  color: var(--blad);
+  border-color: var(--ramka);
+}

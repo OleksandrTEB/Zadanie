@@ -1,0 +1,17 @@
+<%# Fragment wspolny dla wszystkich podstron, dolaczany poleceniem include. %>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%# Znacznik ze znakiem rownosci wstawia wartosc zmiennej z serwera. %>
+  <title><%= tytul %></title>
+  <%# Sciezka zaczyna sie od ukosnika, bo plik lezy w folderze public, %>
+  <%# ktory Express udostepnia jako glowny katalog plikow statycznych. %>
+  <link rel="stylesheet" href="/styl.css">
+</head>
+<body>
+  <header>
+    <h1>Okienko</h1>
+    <p class="podtytul">Sklepik szkolny</p>
+  </header>
